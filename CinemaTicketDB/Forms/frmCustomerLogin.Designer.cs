@@ -1,6 +1,6 @@
 ﻿namespace CinemaTicketDB
 {
-    partial class Form1
+    partial class frmCustomerLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerLogin));
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblError = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -57,9 +56,9 @@
             this.lblPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPassword.Font = new System.Drawing.Font("MV Boli", 12F);
-            this.lblPassword.Location = new System.Drawing.Point(117, 229);
+            this.lblPassword.Location = new System.Drawing.Point(117, 205);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(104, 23);
+            this.lblPassword.Size = new System.Drawing.Size(104, 31);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password :";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,53 +67,42 @@
             // 
             this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmail.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(117, 186);
+            this.lblEmail.Location = new System.Drawing.Point(117, 160);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(104, 23);
+            this.lblEmail.Size = new System.Drawing.Size(104, 31);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "E-mail :";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblError
-            // 
-            this.lblError.Font = new System.Drawing.Font("MV Boli", 12F);
-            this.lblError.Location = new System.Drawing.Point(179, 124);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(184, 23);
-            this.lblError.TabIndex = 3;
-            this.lblError.Text = "Enter your info";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("MV Boli", 12F);
-            this.txtEmail.Location = new System.Drawing.Point(237, 184);
-            this.txtEmail.Multiline = true;
+            this.txtEmail.Location = new System.Drawing.Point(237, 158);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(193, 23);
+            this.txtEmail.Size = new System.Drawing.Size(193, 33);
             this.txtEmail.TabIndex = 4;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("MV Boli", 12F);
-            this.txtPassword.Location = new System.Drawing.Point(237, 229);
-            this.txtPassword.Multiline = true;
+            this.txtPassword.Location = new System.Drawing.Point(237, 203);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(193, 23);
+            this.txtPassword.Size = new System.Drawing.Size(193, 33);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Font = new System.Drawing.Font("MV Boli", 12F);
-            this.btnLogin.Location = new System.Drawing.Point(201, 283);
+            this.btnLogin.Location = new System.Drawing.Point(201, 264);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(129, 37);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lnkRegister
             // 
@@ -126,6 +114,7 @@
             this.lnkRegister.TabIndex = 8;
             this.lnkRegister.TabStop = true;
             this.lnkRegister.Text = "you don\'t have an account ? Regidster now";
+            this.lnkRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRegister_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -137,7 +126,7 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // frmCustomerLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -146,14 +135,15 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.KeyPreview = true;
+            this.Name = "frmCustomerLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmCustomerLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,7 +155,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;

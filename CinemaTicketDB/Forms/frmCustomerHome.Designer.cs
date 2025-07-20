@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerHome));
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.dgvShowtime = new System.Windows.Forms.DataGridView();
+            this.dgvShowtimes = new System.Windows.Forms.DataGridView();
             this.btnMyticket = new System.Windows.Forms.Button();
             this.btnTicket = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowtime)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSendMessage = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowtimes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,20 +44,20 @@
             // 
             this.lblWelcome.BackColor = System.Drawing.SystemColors.Window;
             this.lblWelcome.Font = new System.Drawing.Font("MV Boli", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(324, 29);
+            this.lblWelcome.Location = new System.Drawing.Point(240, 31);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(152, 34);
+            this.lblWelcome.Size = new System.Drawing.Size(312, 34);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome!...";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvShowtime
+            // dgvShowtimes
             // 
-            this.dgvShowtime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShowtime.Location = new System.Drawing.Point(71, 79);
-            this.dgvShowtime.Name = "dgvShowtime";
-            this.dgvShowtime.Size = new System.Drawing.Size(661, 303);
-            this.dgvShowtime.TabIndex = 2;
+            this.dgvShowtimes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShowtimes.Location = new System.Drawing.Point(71, 79);
+            this.dgvShowtimes.Name = "dgvShowtimes";
+            this.dgvShowtimes.Size = new System.Drawing.Size(661, 303);
+            this.dgvShowtimes.TabIndex = 2;
             // 
             // btnMyticket
             // 
@@ -69,6 +70,7 @@
             this.btnMyticket.TabIndex = 7;
             this.btnMyticket.Text = "My Ticket";
             this.btnMyticket.UseVisualStyleBackColor = false;
+            this.btnMyticket.Click += new System.EventHandler(this.btnMyTickets_Click);
             // 
             // btnTicket
             // 
@@ -81,6 +83,20 @@
             this.btnTicket.TabIndex = 8;
             this.btnTicket.Text = "Book a Ticket";
             this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogout.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.btnLogout.Location = new System.Drawing.Point(690, 432);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(98, 30);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // pictureBox1
             // 
@@ -92,33 +108,38 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // btnLogout
+            // btnSendMessage
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.Firebrick;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogout.Font = new System.Drawing.Font("MV Boli", 12F);
-            this.btnLogout.Location = new System.Drawing.Point(703, 432);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(85, 30);
-            this.btnLogout.TabIndex = 10;
-            this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnSendMessage.BackColor = System.Drawing.Color.Cornsilk;
+            this.btnSendMessage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSendMessage.Font = new System.Drawing.Font("MV Boli", 12F);
+            this.btnSendMessage.Location = new System.Drawing.Point(12, 432);
+            this.btnSendMessage.Name = "btnSendMessage";
+            this.btnSendMessage.Size = new System.Drawing.Size(103, 30);
+            this.btnSendMessage.TabIndex = 11;
+            this.btnSendMessage.Text = "Contact Us";
+            this.btnSendMessage.UseVisualStyleBackColor = false;
+            this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
             // frmCustomerHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 474);
+            this.Controls.Add(this.btnSendMessage);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnTicket);
             this.Controls.Add(this.btnMyticket);
-            this.Controls.Add(this.dgvShowtime);
+            this.Controls.Add(this.dgvShowtimes);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCustomerHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShowtime)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomerHome_FormClosing);
+            this.Load += new System.EventHandler(this.frmCustomerHome_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowtimes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -127,10 +148,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.DataGridView dgvShowtime;
+        private System.Windows.Forms.DataGridView dgvShowtimes;
         private System.Windows.Forms.Button btnMyticket;
         private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnSendMessage;
     }
 }

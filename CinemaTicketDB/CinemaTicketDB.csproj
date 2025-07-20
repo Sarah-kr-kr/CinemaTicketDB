@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,52 +49,99 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DAL\ApiMessageDAL.cs" />
+    <Compile Include="DAL\AuditDAL.cs" />
+    <Compile Include="DAL\DbHelper.cs" />
+    <Compile Include="DAL\HallDAL.cs" />
+    <Compile Include="DAL\LoginAttemptDAL.cs" />
+    <Compile Include="DAL\MovieDAL.cs" />
+    <Compile Include="DAL\ShowtimeDAL.cs" />
+    <Compile Include="DAL\TicketDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="Data\GlobalData.cs" />
+    <Compile Include="Forms\frmCustomerLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\frmCustomerLogin.Designer.cs">
+      <DependentUpon>frmCustomerLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAdminManager.cs">
+    <Compile Include="Forms\frmAddAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdminManager.Designer.cs">
+    <Compile Include="Forms\frmAddAdmin.Designer.cs">
+      <DependentUpon>frmAddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdminManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdminManager.Designer.cs">
       <DependentUpon>frmAdminManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBookTicket.cs">
+    <Compile Include="Forms\frmBookTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBookTicket.Designer.cs">
+    <Compile Include="Forms\frmBookTicket.Designer.cs">
       <DependentUpon>frmBookTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomerHome.cs">
+    <Compile Include="Forms\frmCustomerHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomerHome.Designer.cs">
+    <Compile Include="Forms\frmCustomerHome.Designer.cs">
       <DependentUpon>frmCustomerHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMyTickets.cs">
+    <Compile Include="Forms\frmCustomerRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMyTickets.Designer.cs">
+    <Compile Include="Forms\frmCustomerRegister.Designer.cs">
+      <DependentUpon>frmCustomerRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMyTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMyTickets.Designer.cs">
       <DependentUpon>frmMyTickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSendMessage.Designer.cs">
+      <DependentUpon>frmSendMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\SecurityHelper.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
+    <Compile Include="Models\ApiMessage.cs" />
+    <Compile Include="Models\AuditTrail.cs" />
+    <Compile Include="Models\Hall.cs" />
+    <Compile Include="Models\LoginAttempt.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Showtime.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmCustomerLogin.resx">
+      <DependentUpon>frmCustomerLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAdminManager.resx">
+    <EmbeddedResource Include="Forms\frmAddAdmin.resx">
+      <DependentUpon>frmAddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdminManager.resx">
       <DependentUpon>frmAdminManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBookTicket.resx">
+    <EmbeddedResource Include="Forms\frmBookTicket.resx">
       <DependentUpon>frmBookTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomerHome.resx">
+    <EmbeddedResource Include="Forms\frmCustomerHome.resx">
       <DependentUpon>frmCustomerHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMyTickets.resx">
+    <EmbeddedResource Include="Forms\frmCustomerRegister.resx">
+      <DependentUpon>frmCustomerRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMyTickets.resx">
       <DependentUpon>frmMyTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSendMessage.resx">
+      <DependentUpon>frmSendMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,6 +153,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -143,5 +194,6 @@
   <ItemGroup>
     <None Include="Resources\Descargar fondo abstracto moderno gratis.jpeg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

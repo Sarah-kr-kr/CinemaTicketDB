@@ -32,14 +32,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMytickets = new System.Windows.Forms.Label();
             this.lblMybooketticket = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblMessage = new System.Windows.Forms.Label();
+            this.dgvMyBookedTicket = new System.Windows.Forms.DataGridView();
             this.btnPrintticket = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnCancelticket = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMyBookedTicket)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -74,24 +73,13 @@
             this.lblMybooketticket.Text = "My Booked Ticket :-";
             this.lblMybooketticket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dataGridView1
+            // dgvMyBookedTicket
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 143);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(527, 157);
-            this.dataGridView1.TabIndex = 14;
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.BackColor = System.Drawing.SystemColors.Window;
-            this.lblMessage.Font = new System.Drawing.Font("MV Boli", 12F);
-            this.lblMessage.Location = new System.Drawing.Point(179, 365);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(256, 22);
-            this.lblMessage.TabIndex = 15;
-            this.lblMessage.Text = "- - - - - - - - - - - - - - - - -";
-            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dgvMyBookedTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMyBookedTicket.Location = new System.Drawing.Point(25, 143);
+            this.dgvMyBookedTicket.Name = "dgvMyBookedTicket";
+            this.dgvMyBookedTicket.Size = new System.Drawing.Size(527, 245);
+            this.dgvMyBookedTicket.TabIndex = 14;
             // 
             // btnPrintticket
             // 
@@ -104,6 +92,7 @@
             this.btnPrintticket.TabIndex = 16;
             this.btnPrintticket.Text = "Print Ticket";
             this.btnPrintticket.UseVisualStyleBackColor = false;
+            this.btnPrintticket.Click += new System.EventHandler(this.btnPrintticket_Click);
             // 
             // btnRefresh
             // 
@@ -116,6 +105,7 @@
             this.btnRefresh.TabIndex = 17;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnCancelticket
             // 
@@ -128,6 +118,7 @@
             this.btnCancelticket.TabIndex = 18;
             this.btnCancelticket.Text = "Cancel Ticket";
             this.btnCancelticket.UseVisualStyleBackColor = false;
+            this.btnCancelticket.Click += new System.EventHandler(this.btnCancelticket_Click);
             // 
             // btnHome
             // 
@@ -141,6 +132,7 @@
             this.btnHome.Size = new System.Drawing.Size(60, 50);
             this.btnHome.TabIndex = 19;
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // frmMyTickets
             // 
@@ -151,16 +143,18 @@
             this.Controls.Add(this.btnCancelticket);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnPrintticket);
-            this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMyBookedTicket);
             this.Controls.Add(this.lblMybooketticket);
             this.Controls.Add(this.lblMytickets);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMyTickets";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyTickets";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMyTickets_FormClosing);
+            this.Load += new System.EventHandler(this.frmMyTickets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMyBookedTicket)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,8 +164,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblMytickets;
         private System.Windows.Forms.Label lblMybooketticket;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.DataGridView dgvMyBookedTicket;
         private System.Windows.Forms.Button btnPrintticket;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnCancelticket;
