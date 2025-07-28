@@ -29,6 +29,7 @@ namespace CinemaTicketDB
             LoadMovies();
             LoadHalls();
             LoadTickets();
+            LoadShowtimes();
             LoadAuditTrail();
             LoadRecycleBin();
             await LoadMessagesFromAPI();

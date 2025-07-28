@@ -14,6 +14,5 @@ namespace CinemaTicketApp.Data
         /// </summary>
         public static User CurrentUser { get; set; }
 
-        // يمكن إضافة بيانات أخرى مشتركة مثل الفيلم المحدد أو العرض المحدد لاحقًا.
     }
 }
